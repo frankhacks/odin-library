@@ -1,0 +1,58 @@
+.books {
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: clamp(100px, 150px, 200px);
+  border-style: solid;
+  padding: 10px;
+}
+
+.blockTitle {
+  text-align: center;
+  font-size: larger;
+}
+
+.blockAuthor {
+  text-align: center;
+}
+
+.blockPages {
+  padding-top: 25px;
+}
+
+.blockPages,
+.blockRead {
+  padding-inline: 45px;
+  font-size: small;
+}
+
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -150%) scale(0);
+  width: 250px;
+  height: 250px;
+  z-index: 2;
+  padding: 10px;
+  border-radius: 5px;
+  background: #dfdfdf;
+  z-index: 1;
+}
+
+.content.active {
+  transition: all 300ms ease-in-out;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.forms {
+  display: grid;
+  grid-template-rows: 2fr 1fr 1fr 1fr 1fr 1fr;
+}
