@@ -94,10 +94,10 @@ function showBooks(book) {
 
   //Function for remove button
   let deleteBook = function () {
-    let clearContainer = document.getElementById("books");
+    //let clearContainer = document.getElementById("books");
     let index = myLibrary.findIndex((b) => b.id === book.id);
+    myLibrary.splice(index, 1);
     var removeContainer = document.getElementById(book.id);
     removeContainer.remove();
-    myLibrary.splice(index, 1);
   };
 }
