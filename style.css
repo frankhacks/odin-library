@@ -28,9 +28,14 @@
 }
 
 .blockPages,
-.blockRead {
+.blockRead,
+.blockButton {
   padding-inline: 45px;
   font-size: small;
+}
+
+.blockButton {
+  width: 50%;
 }
 
 .content {
