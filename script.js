@@ -79,10 +79,34 @@ function showBooks(book) {
   bookBlock.appendChild(blockPages);
 
   //Adds read info to container
-  var blockRead = document.createElement("div");
-  blockRead.className = "blockRead";
-  blockRead.innerHTML = `Read: ` + book.read;
-  bookBlock.appendChild(blockRead);
+  var readButton = document.createElement("button");
+  readButton.className = "blockRead";
+  readButton.id = "read" + book.id;
+  readButton.onclick = () => toggleRead();
+  bookBlock.appendChild(readButton);
+
+  //Function for creating read / not read button
+  let isRead = function () {
+    var checkMark = document.querySelector("#readInput");
+    if (checkMark.checked === true) {
+      readButton.innerHTML = "Done reading";
+    } else if (checkMark.checked === false) {
+      readButton.innerHTML = "Not read yet";
+    } else {
+      readButton.innerHTML = "error";
+    }
+  };
+
+  isRead(book.id);
+
+  //Function for toggling read / not read button
+  let toggleRead = function () {
+    if (readButton.innerHTML === "Done reading") {
+      readButton.innerHTML = "Not read yet";
+    } else if (readButton.innerHTML === "Not read yet") {
+      readButton.innerHTML = "Done reading";
+    }
+  };
 
   //Adds remove button
   var blockButton = document.createElement("button");
